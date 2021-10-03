@@ -58,15 +58,15 @@ class Checker():
                 time.sleep(0.3)
                 if parser.last_time != parser.time_post:
                     parser.driver.implicitly_wait(5)
-                    parser.get_image()
-                    parser.driver.implicitly_wait(5)
                     time.sleep(0.3)
                     self.tweet_text = parser.get_text()
                     if self.check_text():
                         self.message()
                         parser.last_time = parser.time_post
                         continue 
-                    time.sleep(0.2)
+                    parser.driver.implicitly_wait(5)
+                    parser.get_image()
+                    time.sleep(0.5)
                     if self.check_image_text():
                         self.message()
                         parser.last_time = parser.time_post
