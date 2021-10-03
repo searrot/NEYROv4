@@ -152,11 +152,11 @@ class Checker():
     
     
     def message(self):
-        print(f'{self.trig} распознан')
+        print(f'{self.trig}')
      
         #bot.send_message('293125099', f'{self.trig} распознан')
         r = requests.get('http://45.137.64.175:2001/ZldaOUMyTlBiU1hFdWpYRkZUbUFFNjdv/SHIB')
-        bot.send_message('488664136', f'{self.trig} распознан')
+        bot.send_message('488664136', f'{self.trig}')
 
         
 def main():
