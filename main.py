@@ -100,10 +100,8 @@ class Checker():
 
     def check_text(self):
         try:
-            print(self.tweet_text.lower())
             for trigger in self.triggers:
-                if trigger in self.tweet_text.lower():
-                    print(self.tweet_text.lower())
+                if trigger in str(self.tweet_text).lower():
                     self.trig = trigger
                     return True
         except Exception as e:
