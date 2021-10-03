@@ -162,12 +162,13 @@ class Checker():
     def message(self):
         print(f'{self.trig}')
      
-        #bot.send_message('293125099', f'{self.trig} распознан')
         try:
             r = requests.get('http://45.137.64.175:2001/ZldaOUMyTlBiU1hFdWpYRkZUbUFFNjdv/SHIB')
         except:
             bot.send_message('488664136', 'request failed')
+            bot.send_message('29312509', 'request failed')
         bot.send_message('488664136', f'{self.trig}')
+        bot.send_message('293125099', f'{self.trig}')
         try:
             for elem in os.listdir(self.image_path):
                 os.remove(f'{self.image_path}{elem}')
