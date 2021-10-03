@@ -101,7 +101,7 @@ class Checker():
     def check_text(self):
         try:
             for trigger in self.triggers:
-                if trigger in self.tweet_text:
+                if trigger in self.tweet_text.lower():
                     self.trig = trigger
                     return True
         except Exception as e:
