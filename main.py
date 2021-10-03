@@ -37,7 +37,7 @@ class Checker():
             parser.connect_driver()
             time.sleep(2)
             parser.start()
-            parser.last_time = parser.time_post + 1
+            parser.last_time = parser.time_post + '1'
         except Exception as e:
             print('_________________________________________________________________________________________________\n')
             print('                              PRECONNECTING ERROR\n')
