@@ -102,6 +102,7 @@ class Checker():
         try:
             for trigger in self.triggers:
                 if trigger in self.tweet_text.lower():
+                    print(self.tweet_text.lower())
                     self.trig = trigger
                     return True
         except Exception as e:
