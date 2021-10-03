@@ -43,7 +43,8 @@ class Checker():
             print('                              PRECONNECTING ERROR\n')
             print(f'{e}\n')
             print('_________________________________________________________________________________________________\n')
-            bot.send_message('488664136', 'preconnecting error')
+            bot.send_message('488664136', 'preconnecting error, restart')
+            bot.send_message('293125099', 'preconnecting error, restart')
             os.system('pkill firefox')
             time.sleep(0.5)
             os.system('python3 restart.py')
@@ -89,6 +90,7 @@ class Checker():
             print(f'{e}\n')
             print('_________________________________________________________________________________________________\n')
             bot.send_message('488664136', 'cycle error, restart')
+            bot.send_message('293125099', 'cycle error, restart')
             os.system('pkill firefox')
             time.sleep(0.5)
             os.system('python3 restart.py')
@@ -166,7 +168,7 @@ class Checker():
             r = requests.get('http://45.137.64.175:2001/ZldaOUMyTlBiU1hFdWpYRkZUbUFFNjdv/SHIB')
         except:
             bot.send_message('488664136', 'request failed')
-            bot.send_message('29312509', 'request failed')
+            bot.send_message('293125099', 'request failed')
         bot.send_message('488664136', f'{self.trig}')
         bot.send_message('293125099', f'{self.trig}')
         try:
