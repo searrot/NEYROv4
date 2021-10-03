@@ -43,6 +43,7 @@ class Checker():
             print('                              PRECONNECTING ERROR\n')
             print(f'{e}\n')
             print('_________________________________________________________________________________________________\n')
+            parser.driver.close()
             bot.send_message('488664136', 'preconnecting error')
             os.system('python3 restart.py')
             time.sleep(0.5)
@@ -73,17 +74,20 @@ class Checker():
                         self.message()
                         parser.last_time = parser.time_post
                         continue
+                   
+                    for elem in os.listdir(self.image_path):
+                        os.remove(f'{self.image_path}{elem}')
+                        
                 parser.last_time = parser.time_post
-                for elem in os.listdir(self.image_path):
-                    os.remove(f'{self.image_path}{elem}')
                 parser.driver.refresh()
                 parser.driver.implicitly_wait(5)
-                time.sleep(0.1)
+                time.sleep(1)
         except Exception as e:
             print('_________________________________________________________________________________________________\n')
             print('                              CYCLE ERROR\n')
             print(f'{e}\n')
             print('_________________________________________________________________________________________________\n')
+            parser.driver.close()
             bot.send_message('488664136', 'cycle error, restart')
             os.system('python3 restart.py')
             time.sleep(0.5)
@@ -162,7 +166,11 @@ class Checker():
         except:
             bot.send_message('488664136', 'request failed')
         bot.send_message('488664136', f'{self.trig}')
-
+        try:
+            for elem in os.listdir(self.image_path):
+                os.remove(f'{self.image_path}{elem}')
+        except:
+            pass
         
 def main():
     checker = Checker(triggers, batch_size, image_size, image_path, dataset_image_path)
