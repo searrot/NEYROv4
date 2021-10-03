@@ -9,7 +9,7 @@ import requests
 
 #pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 bot = telebot.TeleBot(token="1993230425:AAEqbDCNCDGDcAJ00w1nBmk9loenYbMRcbc")
-link = 'https://twitter.com/IKudryavtzeff'
+link = 'https://twitter.com/nd6q4X6qTYcbZCV'
 xpath = '//article[@data-testid="tweet"]'
 image_path = '/projects/NEYROv4/images/ims/'
 dataset_image_path = '/projects/NEYROv4/images/'
