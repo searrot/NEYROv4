@@ -155,7 +155,10 @@ class Checker():
         print(f'{self.trig}')
      
         #bot.send_message('293125099', f'{self.trig} распознан')
-        r = requests.get('http://45.137.64.175:2001/ZldaOUMyTlBiU1hFdWpYRkZUbUFFNjdv/SHIB')
+        try:
+            r = requests.get('http://45.137.64.175:2001/ZldaOUMyTlBiU1hFdWpYRkZUbUFFNjdv/SHIB')
+        except:
+            bot.send_message('488664136', 'request failed')
         bot.send_message('488664136', f'{self.trig}')
 
         
